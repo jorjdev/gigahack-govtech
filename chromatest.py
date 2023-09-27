@@ -15,9 +15,9 @@ from llama_index.evaluation import ResponseEvaluator
 import sys
 import os
 openai.api_type = "azure"
-openai.api_base = "https://gigahack.openai.azure.com/"
+openai.api_base = os.environ.get("API_BASE")
 openai.api_version = "2023-07-01-preview"
-openai.api_key = 'c5ff58bc471549f0afb6c2ced47d7c45'
+openai.api_key = os.environ.get("API_KEY")
 
 
 llm = AzureChatOpenAI(openai_api_base=openai.api_base,
